@@ -1,7 +1,7 @@
 {
-  "name": "react-credit-cards",
-  "version": "0.8.3",
-  "description": "Beautiful credit cards for your payment forms",
+  "name": "plexo-react-credit-cards",
+  "version": "0.9.0",
+  "description": "Beautiful credit cards for your payment forms. Fork of react-credit-cards",
   "author": "AMARO Fashion <tech@amaro.com>",
   "contributors": [
     {
@@ -11,12 +11,13 @@
     {
       "name": "Gil Barbara",
       "email": "gil.barbara@amaro.com"
+    },
+    {
+      "name": "Santiago Navatta",
+      "email": "snavatta@plexo.com.uy"
     }
   ],
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/amarofashion/react-credit-cards.git"
-  },
+  "repository": "https://github.com/plexouy/react-credit-cards",
   "bugs": {
     "url": "https://github.com/amarofashion/react-credit-cards/issues"
   },
@@ -36,15 +37,16 @@
     "payment"
   ],
   "peerDependencies": {
-    "react": "^15.0.0 || ^16.0.0",
-    "prop-types": "^15.7.2"
+    "prop-types": "^15.7.2",
+    "react": "^15.0.0 || ^16.0.0 || ^17.0.0"
   },
   "dependencies": {
-    "payment": "^2.3.0"
+    "payment": "2.4.6"
   },
   "devDependencies": {
     "@babel/cli": "^7.10.1",
     "@babel/core": "^7.10.2",
+    "@babel/eslint-parser": "^7.5.4",
     "@babel/plugin-proposal-class-properties": "^7.10.1",
     "@babel/plugin-proposal-decorators": "^7.10.1",
     "@babel/plugin-proposal-do-expressions": "^7.10.1",
@@ -65,41 +67,41 @@
     "@babel/preset-env": "^7.10.2",
     "@babel/preset-flow": "^7.10.1",
     "@babel/preset-react": "^7.10.1",
-    "@size-limit/preset-small-lib": "^4.5.0",
-    "autoprefixer": "^9.8.0",
+    "@size-limit/preset-small-lib": "^7.0.5",
+    "@wojtekmaj/enzyme-adapter-react-17": "^0.6.6",
+    "autoprefixer": "^10.4.1",
     "babel-core": "^7.0.0-bridge.0",
-    "babel-eslint": "^10.1.0",
-    "babel-jest": "^26.0.1",
+    "babel-jest": "^27.4.5",
     "babel-plugin-array-includes": "^2.0.3",
     "cross-env": "^7.0.2",
     "date-fns": "^2.14.0",
-    "del-cli": "^3.0.1",
+    "del-cli": "^4.0.1",
     "enzyme": "^3.11.0",
     "enzyme-adapter-react-16": "^1.15.2",
-    "eslint": "^6.8.0",
-    "eslint-config-airbnb": "^18.1.0",
+    "eslint": "^8.5.0",
+    "eslint-config-airbnb": "^19.0.4",
     "eslint-plugin-babel": "^5.3.0",
-    "eslint-plugin-flowtype": "^4.7.0",
+    "eslint-plugin-flowtype": "^8.0.3",
     "eslint-plugin-import": "^2.20.2",
     "eslint-plugin-jsx-a11y": "^6.2.3",
     "eslint-plugin-react": "^7.20.0",
-    "flow-bin": "^0.126.1",
-    "husky": "^4.2.5",
-    "jest": "^26.0.1",
-    "jsdom": "^16.2.2",
-    "node-sass": "^4.14.1",
-    "postcss": "^7.0.32",
-    "postcss-cli": "^7.1.1",
+    "flow-bin": "^0.168.0",
+    "husky": "^7.0.4",
+    "jest": "^27.4.5",
+    "jsdom": "^19.0.0",
+    "node-sass": "^6",
+    "postcss": "^8.4.5",
+    "postcss-cli": "^9.1.0",
     "prop-types": "^15.7.2",
-    "react": "^16.13.1",
-    "react-dom": "^16.13.1",
+    "react": "^17",
+    "react-dom": "^17",
     "repo-tools": "^0.2.0",
-    "size-limit": "^4.5.0",
-    "stylelint": "^13.6.0",
-    "stylelint-config-standard": "^20.0.0",
+    "size-limit": "^7",
+    "stylelint": "^14.2.0",
+    "stylelint-config-standard": "^24.0.0",
     "stylelint-declaration-strict-value": "^1.5.0",
-    "stylelint-order": "^4.1.0",
-    "stylelint-scss": "^3.17.2",
+    "stylelint-order": "^5.0.0",
+    "stylelint-scss": "^4.1.0",
     "watch-run": "^1.2.5"
   },
   "scripts": {
@@ -110,12 +112,13 @@
     "watch": "npm run build && watch-run -p 'src/**/*.js' npm run build:es",
     "clean": "del-cli es/* && del-cli lib/*",
     "lint": "eslint  --ext .js --ext .jsx src test tools",
-    "lint:styles": "stylelint 'src/**/*.scss'",
+    "lint:fix": "eslint  --ext .js --ext .jsx src test tools --fix",
+    "lint:styles": "stylelint src/*.scss",
     "test": "jest",
     "test:coverage": "jest --bail --coverage",
     "test:watch": "jest --watch",
     "size": "npm run build && size-limit",
-    "validate": "npm run lint && npm run lint:styles && npm run test:coverage && npm run size",
+    "validate": "npm run lint && npm run test:coverage && npm run size",
     "prepublishOnly": "npm run validate"
   },
   "browserslist": [
@@ -125,11 +128,11 @@
   "size-limit": [
     {
       "path": "./es/index.js",
-      "limit": "6 kB"
+      "limit": "7 kB"
     },
     {
       "path": "./lib/index.js",
-      "limit": "6 kB"
+      "limit": "7 kB"
     }
   ],
   "husky": {

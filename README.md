@@ -6,12 +6,12 @@ A slick credit card component for React.
 
 ![demo](https://raw.githubusercontent.com/amarofashion/react-credit-cards/master/docs/media/rccs.gif)
 
-[Demo](https://amarofashion.github.io/react-credit-cards/)
+[Demo](https://github.com/plexouy/react-credit-cards/)
 
 ### Install
 
 ```
-npm install --save react-credit-cards
+npm install --save plexo-react-credit-cards
 ```
 
 ### Usage
@@ -136,7 +136,7 @@ Or you can import the CSS:
 
 Here's how you can get started developing locally:
 
-    $ git clone https://github.com/amarofashion/react-credit-cards.git
+    $ git clone https://github.com/plexouy/react-credit-cards
     $ cd react-credit-cards
     $ npm install
     $ npm start
@@ -158,4 +158,4 @@ Please read [CONTRIBUTING.md](CONTRIBUTING.md) for details on our code of conduc
 
 This project is licensed under the [MIT License](LICENSE.md).
 
-###### Made with ❤️ at [AMARO](https://amaro.com).
+###### Made with ❤️ at [AMARO](https://amaro.com). Mantained by Plexo (https://www.plexo.com.uy)
