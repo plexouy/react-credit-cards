@@ -119,7 +119,8 @@
     "test:watch": "jest --watch",
     "size": "npm run build && size-limit",
     "validate": "npm run lint && npm run test:coverage && npm run size",
-    "prepublishOnly": "npm run validate"
+    "prepublishOnly": "npm run validate",
+    "prepare": "npx husky install"
   },
   "browserslist": [
     "> 0.2%",
